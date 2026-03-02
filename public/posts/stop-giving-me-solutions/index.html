@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Stop Giving Me Solutions | My Blog</title>
+<meta name="keywords" content="leadership, ownership, engineering culture">
+<meta name="description" content="How Prescriptive Leadership Erodes Engineering Culture">
+<meta name="author" content="Mathieu">
+<link rel="canonical" href="http://localhost:1313/blog/posts/stop-giving-me-solutions/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/posts/stop-giving-me-solutions/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/blog/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Stop Giving Me Solutions
+    </h1>
+    <div class="post-description">
+      How Prescriptive Leadership Erodes Engineering Culture
+    </div>
+    <div class="post-meta"><span title='2026-03-02 09:00:00 +0100 CET'>March 2, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Mathieu</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="its-just-a-quick-fix">&ldquo;It’s just a quick fix.&rdquo;<a hidden class="anchor" aria-hidden="true" href="#its-just-a-quick-fix">#</a></h2>
+<p>A few years ago, shortly after joining a scale-up, I was handed a task as part of my onboarding: <em>&ldquo;Add an autoscaler to this ECS service to reduce the cost of unused compute. It shouldn’t take more than half a day.&rdquo;</em></p>
+<p>At first, it sounded straightforward. The service was significantly overprovisioned with very little load. A rough estimate suggested we could reduce the fleet size by 80% and immediately cut costs. It looked like an easy win, so I implemented it.</p>
+<p>Before calling the task complete, I ran a load test approximating production traffic. The autoscaling logic triggered correctly, and new tasks started launching. But then, requests started failing, and clients began seeing 502 and 504 errors.</p>
+<p>Digging deeper, I found numerous issues:</p>
+<ul>
+<li>The concurrency model (Gunicorn/gevent) lacked proper monkey patching.</li>
+<li>Neither the client nor the Traefik proxy layer implemented retries.</li>
+<li>New ECS tasks took up to 8 minutes to become ready to serve traffic.</li>
+<li>Health checks and timeout configurations were misaligned.</li>
+</ul>
+<p>After talking more with users, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was the critical metrics.</p>
+<p>In short: the system was not designed to scale horizontally in a safe way.</p>
+<p>Instead of delivering immediate business value, I had to spend our limited time budget proving <strong>why</strong> the prescribed solution was insufficient, and investigating what actual architectural changes were needed. Ultimately, the cost of refactoring the service outweighed the immediate infrastructure savings, and we made the pragmatic business decision to move on to higher-priority initiatives. These machines are still burning money today.</p>
+<h2 id="the-anti-pattern-prescribing-the"><strong>The Anti-Pattern: Prescribing the &ldquo;How&rdquo;</strong><a hidden class="anchor" aria-hidden="true" href="#the-anti-pattern-prescribing-the">#</a></h2>
+<p>What went wrong here? I was handed a prescriptive solution that ignored the system&rsquo;s historical context.</p>
+<p>When organizations prescribe exact solutions to their engineers, they unintentionally build a culture of dependency. We train teams to wait for instructions rather than think critically, shifting the engineer&rsquo;s role from a <em>problem-solver</em> to a mere <em>implementer</em>.</p>
+<p>More importantly, when an engineer just executes a predefined task, they don&rsquo;t own the deliverable. If the solution fails, the accountability falls on whoever wrote the ticket. You cannot hold someone accountable for an outcome if they had no say in the methodology.</p>
+<p>This is entirely incompatible with a culture of true engineering ownership, which a lot of companies claim to have.</p>
+<h2 id="a-better-way-framing-the"><strong>A Better Way: Framing the &ldquo;Why&rdquo;</strong><a hidden class="anchor" aria-hidden="true" href="#a-better-way-framing-the">#</a></h2>
+<p>We could have achieved a much better outcome simply by phrasing the task differently:</p>
+<p><em>&ldquo;In the Bar project, our image-processing machines are largely underutilized and costing us money. Could we aim to reduce this bill by 80%, or do the best we can within a 2-day timebox?&rdquo;</em></p>
+<p>This approach provides context, states the business goal, and sets a measurable constraint. Most importantly, it delegates the <em>methodology</em> to the engineer.</p>
+<p>In this case, simply optimizing the client to handle failures gracefully and setting a fixed, smaller number of nodes would have met the goal.</p>
+<h2 id="influencing-through-inquiry"><strong>Influencing Through Inquiry</strong><a hidden class="anchor" aria-hidden="true" href="#influencing-through-inquiry">#</a></h2>
+<p>As a tech lead, it is tempting to push for the solution you see in your head. But the best way to ensure an implementation actually solves the root issue is to collaborate.</p>
+<p>Instead of dictating, ask:</p>
+<ul>
+<li><em>What approaches have you considered?</em></li>
+<li><em>How should we handle the edge case when X happens?</em></li>
+<li><em>What do you see as the biggest roadblock here?</em></li>
+<li><em>What is the engineering effort of solution Z compared to the business benefit?</em></li>
+</ul>
+<p>Beside, guiding an engineer to the solution themselves gives them a sense of achievement and total ownership.</p>
+<h2 id="scaling-ownership-a-canva-success-story"><strong>Scaling Ownership: A Canva Success Story</strong><a hidden class="anchor" aria-hidden="true" href="#scaling-ownership-a-canva-success-story">#</a></h2>
+<p>While working as a Staff SRE at Canva, I led a year-long initiative to discover and remediate systemic reliability risks across a platform serving 250 million MAUs.</p>
+<p>We built an automated system that parsed incident postmortems, Slack context, and Service SLOs using data science and LLMs. This allowed us to build a comprehensive and continuous backlog of reliability risks.</p>
+<p>SREs translated these risks into well-framed problem statements for the owning teams. We ensured every ticket had:</p>
+<ol>
+<li><strong>Clear user impact</strong>, linked to previous incident metadata.</li>
+<li><strong>Measurable outcomes</strong>, tied directly to observability metrics.</li>
+<li><strong>A framing of business risk.</strong></li>
+</ol>
+<p>By the time I left, we had accumulated a backlog of over 80 well-framed reliability risks, with half successfully adopted onto product team roadmaps. We rarely saw pushback because we weren&rsquo;t telling them <em>how</em> to write their code; we were showing them a critical business problem and trusting them to solve it.</p>
+<p>Even better, the engineers who were able to solve this risks could measure their impact through real business metrics. How good!</p>
+<h2 id="conclusion"><strong>Conclusion</strong><a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>When people are trusted to design their own solutions, they become deeply invested in making them work. Solutions are often better and engineers grow in their craft and develop autonomy.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/blog/tags/leadership/">Leadership</a></li>
+      <li><a href="http://localhost:1313/blog/tags/ownership/">Ownership</a></li>
+      <li><a href="http://localhost:1313/blog/tags/engineering-culture/">Engineering Culture</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/blog/">My Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Leadership on My Blog</title>
+    <link>http://localhost:1313/blog/tags/leadership/</link>
+    <description>Recent content in Leadership on My Blog</description>
+    <generator>Hugo -- 0.156.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2026 09:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stop Giving Me Solutions</title>
+      <link>http://localhost:1313/blog/posts/stop-giving-me-solutions/</link>
+      <pubDate>Mon, 02 Mar 2026 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/blog/posts/stop-giving-me-solutions/</guid>
+      <description>How Prescriptive Leadership Erodes Engineering Culture</description>
+      <content:encoded><![CDATA[<h2 id="its-just-a-quick-fix">&ldquo;It’s just a quick fix.&rdquo;</h2>
+<p>A few years ago, shortly after joining a scale-up, I was handed a task as part of my onboarding: <em>&ldquo;Add an autoscaler to this ECS service to reduce the cost of unused compute. It shouldn’t take more than half a day.&rdquo;</em></p>
+<p>At first, it sounded straightforward. The service was significantly overprovisioned with very little load. A rough estimate suggested we could reduce the fleet size by 80% and immediately cut costs. It looked like an easy win, so I implemented it.</p>
+<p>Before calling the task complete, I ran a load test approximating production traffic. The autoscaling logic triggered correctly, and new tasks started launching. But then, requests started failing, and clients began seeing 502 and 504 errors.</p>
+<p>Digging deeper, I found numerous issues:</p>
+<ul>
+<li>The concurrency model (Gunicorn/gevent) lacked proper monkey patching.</li>
+<li>Neither the client nor the Traefik proxy layer implemented retries.</li>
+<li>New ECS tasks took up to 8 minutes to become ready to serve traffic.</li>
+<li>Health checks and timeout configurations were misaligned.</li>
+</ul>
+<p>After talking more with users, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was the critical metrics.</p>
+<p>In short: the system was not designed to scale horizontally in a safe way.</p>
+<p>Instead of delivering immediate business value, I had to spend our limited time budget proving <strong>why</strong> the prescribed solution was insufficient, and investigating what actual architectural changes were needed. Ultimately, the cost of refactoring the service outweighed the immediate infrastructure savings, and we made the pragmatic business decision to move on to higher-priority initiatives. These machines are still burning money today.</p>
+<h2 id="the-anti-pattern-prescribing-the"><strong>The Anti-Pattern: Prescribing the &ldquo;How&rdquo;</strong></h2>
+<p>What went wrong here? I was handed a prescriptive solution that ignored the system&rsquo;s historical context.</p>
+<p>When organizations prescribe exact solutions to their engineers, they unintentionally build a culture of dependency. We train teams to wait for instructions rather than think critically, shifting the engineer&rsquo;s role from a <em>problem-solver</em> to a mere <em>implementer</em>.</p>
+<p>More importantly, when an engineer just executes a predefined task, they don&rsquo;t own the deliverable. If the solution fails, the accountability falls on whoever wrote the ticket. You cannot hold someone accountable for an outcome if they had no say in the methodology.</p>
+<p>This is entirely incompatible with a culture of true engineering ownership, which a lot of companies claim to have.</p>
+<h2 id="a-better-way-framing-the"><strong>A Better Way: Framing the &ldquo;Why&rdquo;</strong></h2>
+<p>We could have achieved a much better outcome simply by phrasing the task differently:</p>
+<p><em>&ldquo;In the Bar project, our image-processing machines are largely underutilized and costing us money. Could we aim to reduce this bill by 80%, or do the best we can within a 2-day timebox?&rdquo;</em></p>
+<p>This approach provides context, states the business goal, and sets a measurable constraint. Most importantly, it delegates the <em>methodology</em> to the engineer.</p>
+<p>In this case, simply optimizing the client to handle failures gracefully and setting a fixed, smaller number of nodes would have met the goal.</p>
+<h2 id="influencing-through-inquiry"><strong>Influencing Through Inquiry</strong></h2>
+<p>As a tech lead, it is tempting to push for the solution you see in your head. But the best way to ensure an implementation actually solves the root issue is to collaborate.</p>
+<p>Instead of dictating, ask:</p>
+<ul>
+<li><em>What approaches have you considered?</em></li>
+<li><em>How should we handle the edge case when X happens?</em></li>
+<li><em>What do you see as the biggest roadblock here?</em></li>
+<li><em>What is the engineering effort of solution Z compared to the business benefit?</em></li>
+</ul>
+<p>Beside, guiding an engineer to the solution themselves gives them a sense of achievement and total ownership.</p>
+<h2 id="scaling-ownership-a-canva-success-story"><strong>Scaling Ownership: A Canva Success Story</strong></h2>
+<p>While working as a Staff SRE at Canva, I led a year-long initiative to discover and remediate systemic reliability risks across a platform serving 250 million MAUs.</p>
+<p>We built an automated system that parsed incident postmortems, Slack context, and Service SLOs using data science and LLMs. This allowed us to build a comprehensive and continuous backlog of reliability risks.</p>
+<p>SREs translated these risks into well-framed problem statements for the owning teams. We ensured every ticket had:</p>
+<ol>
+<li><strong>Clear user impact</strong>, linked to previous incident metadata.</li>
+<li><strong>Measurable outcomes</strong>, tied directly to observability metrics.</li>
+<li><strong>A framing of business risk.</strong></li>
+</ol>
+<p>By the time I left, we had accumulated a backlog of over 80 well-framed reliability risks, with half successfully adopted onto product team roadmaps. We rarely saw pushback because we weren&rsquo;t telling them <em>how</em> to write their code; we were showing them a critical business problem and trusting them to solve it.</p>
+<p>Even better, the engineers who were able to solve this risks could measure their impact through real business metrics. How good!</p>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>When people are trusted to design their own solutions, they become deeply invested in making them work. Solutions are often better and engineers grow in their craft and develop autonomy.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

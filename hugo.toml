@@ -1,0 +1,35 @@
+baseURL = "https://username.github.io/blog/"
+languageCode = "en-us"
+title = "My Blog"
+theme = "PaperMod"
+enableRSS = true
+
+[params]
+  defaultContentLanguage = "en"
+  ShowFullTextinRSS = true
+  ShowReadingTime = true
+  author = "Mathieu"
+  homepage = "https://example.com"
+ 
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Mathieu"
+    Content = """
+    Staff Engineer & Technology Leader | 12+ Years Scaling Global Platforms
+Former Staff SRE at Canva, where I architected infrastructure for 250M+ MAUs. From SF to Sydney, I’ve spent over a decade building data-intensive systems and leading high-growth tech orgs. 
+
+
+Now based in Annecy, France, I help startups improve their operational readiness and production-grade AI integrations.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/mmailhos"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/mathieumailhos"
+
+  [[params.socialIcons]]
+    name = "bluesky"
+    url = "https://bsky.app/profile/mathieumailhos.bsky.social"
