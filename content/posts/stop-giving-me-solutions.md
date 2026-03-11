@@ -4,7 +4,7 @@ date = "2026-03-02T09:00:00+01:00"
 draft = false
 tags = ["leadership", "ownership", "engineering culture"]
 categories = ["Leadership"]
-description = "How Prescriptive Leadership Erodes Engineering Culture"
+description = "How prescriptive leadership erodes engineering culture"
 +++
 
 ## "It’s just a quick fix."
@@ -15,14 +15,14 @@ At first, it sounded straightforward. The service was significantly overprovisio
 
 Before calling the task complete, I ran a load test approximating production traffic. The autoscaling logic triggered correctly, and new tasks started launching. But then, requests started failing, and clients began seeing 502 and 504 errors.
 
-Digging deeper, I found numerous issues:
+Digging deeper, I found a few issues:
 
 - The concurrency model (Gunicorn/gevent) lacked proper monkey patching.
 - Neither the client nor the Traefik proxy layer implemented retries.
 - New ECS tasks took up to 8 minutes to become ready to serve traffic.
 - Health checks and timeout configurations were misaligned.
 
-After talking more with users, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was the critical metrics.
+After talking more with the core maintainer, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was.
 
 In short: the system was not designed to scale horizontally in a safe way.
 

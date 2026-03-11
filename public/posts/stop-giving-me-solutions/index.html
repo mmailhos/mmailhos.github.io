@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Stop Giving Me Solutions | My Blog</title>
+<title>Stop Giving Me Solutions | Mathieu Mailhos</title>
 <meta name="keywords" content="leadership, ownership, engineering culture">
-<meta name="description" content="How Prescriptive Leadership Erodes Engineering Culture">
+<meta name="description" content="How prescriptive leadership erodes engineering culture">
 <meta name="author" content="Mathieu">
 <link rel="canonical" href="http://localhost:1313/blog/posts/stop-giving-me-solutions/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
@@ -76,7 +76,7 @@
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/blog/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
+            <a href="http://localhost:1313/blog/" accesskey="h" title="Mathieu Mailhos (Alt + H)">Mathieu Mailhos</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -113,7 +113,7 @@
       Stop Giving Me Solutions
     </h1>
     <div class="post-description">
-      How Prescriptive Leadership Erodes Engineering Culture
+      How prescriptive leadership erodes engineering culture
     </div>
     <div class="post-meta"><span title='2026-03-02 09:00:00 +0100 CET'>March 2, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Mathieu</span>
 
@@ -123,14 +123,14 @@
 <p>A few years ago, shortly after joining a scale-up, I was handed a task as part of my onboarding: <em>&ldquo;Add an autoscaler to this ECS service to reduce the cost of unused compute. It shouldn’t take more than half a day.&rdquo;</em></p>
 <p>At first, it sounded straightforward. The service was significantly overprovisioned with very little load. A rough estimate suggested we could reduce the fleet size by 80% and immediately cut costs. It looked like an easy win, so I implemented it.</p>
 <p>Before calling the task complete, I ran a load test approximating production traffic. The autoscaling logic triggered correctly, and new tasks started launching. But then, requests started failing, and clients began seeing 502 and 504 errors.</p>
-<p>Digging deeper, I found numerous issues:</p>
+<p>Digging deeper, I found a few issues:</p>
 <ul>
 <li>The concurrency model (Gunicorn/gevent) lacked proper monkey patching.</li>
 <li>Neither the client nor the Traefik proxy layer implemented retries.</li>
 <li>New ECS tasks took up to 8 minutes to become ready to serve traffic.</li>
 <li>Health checks and timeout configurations were misaligned.</li>
 </ul>
-<p>After talking more with users, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was the critical metrics.</p>
+<p>After talking more with the core maintainer, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was.</p>
 <p>In short: the system was not designed to scale horizontally in a safe way.</p>
 <p>Instead of delivering immediate business value, I had to spend our limited time budget proving <strong>why</strong> the prescribed solution was insufficient, and investigating what actual architectural changes were needed. Ultimately, the cost of refactoring the service outweighed the immediate infrastructure savings, and we made the pragmatic business decision to move on to higher-priority initiatives. These machines are still burning money today.</p>
 <h2 id="the-anti-pattern-prescribing-the"><strong>The Anti-Pattern: Prescribing the &ldquo;How&rdquo;</strong><a hidden class="anchor" aria-hidden="true" href="#the-anti-pattern-prescribing-the">#</a></h2>
@@ -181,7 +181,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/blog/">My Blog</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/blog/">Mathieu Mailhos</a></span> · 
 
     <span>
         Powered by

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My Blog</title>
+    <title>Mathieu Mailhos</title>
     <link>http://localhost:1313/blog/</link>
-    <description>Recent content on My Blog</description>
+    <description>Recent content on Mathieu Mailhos</description>
     <generator>Hugo -- 0.156.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2026 09:00:00 +0100</lastBuildDate>
@@ -13,19 +13,19 @@
       <link>http://localhost:1313/blog/posts/stop-giving-me-solutions/</link>
       <pubDate>Mon, 02 Mar 2026 09:00:00 +0100</pubDate>
       <guid>http://localhost:1313/blog/posts/stop-giving-me-solutions/</guid>
-      <description>How Prescriptive Leadership Erodes Engineering Culture</description>
+      <description>How prescriptive leadership erodes engineering culture</description>
       <content:encoded><![CDATA[<h2 id="its-just-a-quick-fix">&ldquo;It’s just a quick fix.&rdquo;</h2>
 <p>A few years ago, shortly after joining a scale-up, I was handed a task as part of my onboarding: <em>&ldquo;Add an autoscaler to this ECS service to reduce the cost of unused compute. It shouldn’t take more than half a day.&rdquo;</em></p>
 <p>At first, it sounded straightforward. The service was significantly overprovisioned with very little load. A rough estimate suggested we could reduce the fleet size by 80% and immediately cut costs. It looked like an easy win, so I implemented it.</p>
 <p>Before calling the task complete, I ran a load test approximating production traffic. The autoscaling logic triggered correctly, and new tasks started launching. But then, requests started failing, and clients began seeing 502 and 504 errors.</p>
-<p>Digging deeper, I found numerous issues:</p>
+<p>Digging deeper, I found a few issues:</p>
 <ul>
 <li>The concurrency model (Gunicorn/gevent) lacked proper monkey patching.</li>
 <li>Neither the client nor the Traefik proxy layer implemented retries.</li>
 <li>New ECS tasks took up to 8 minutes to become ready to serve traffic.</li>
 <li>Health checks and timeout configurations were misaligned.</li>
 </ul>
-<p>After talking more with users, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was the critical metrics.</p>
+<p>After talking more with the core maintainer, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was.</p>
 <p>In short: the system was not designed to scale horizontally in a safe way.</p>
 <p>Instead of delivering immediate business value, I had to spend our limited time budget proving <strong>why</strong> the prescribed solution was insufficient, and investigating what actual architectural changes were needed. Ultimately, the cost of refactoring the service outweighed the immediate infrastructure savings, and we made the pragmatic business decision to move on to higher-priority initiatives. These machines are still burning money today.</p>
 <h2 id="the-anti-pattern-prescribing-the"><strong>The Anti-Pattern: Prescribing the &ldquo;How&rdquo;</strong></h2>

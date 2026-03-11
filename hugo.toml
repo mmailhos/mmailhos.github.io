@@ -1,6 +1,6 @@
-baseURL = "https://username.github.io/blog/"
+baseURL = "https://mmailhos.github.io/blog/"
 languageCode = "en-us"
-title = "My Blog"
+title = "Mathieu Mailhos"
 theme = "PaperMod"
 enableRSS = true
 
