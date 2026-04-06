@@ -2,17 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Mathieu Mailhos</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://mmailhos.github.io/posts/</link>
     <description>Recent content in Posts on Mathieu Mailhos</description>
     <generator>Hugo -- 0.156.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2026 09:00:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Apr 2026 09:00:00 +0200</lastBuildDate>
+    <atom:link href="https://mmailhos.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I’d Revise Engineering Interviews for 2026</title>
+      <link>https://mmailhos.github.io/posts/how-i-revise-engineering-interviews-2026/</link>
+      <pubDate>Mon, 06 Apr 2026 09:00:00 +0200</pubDate>
+      <guid>https://mmailhos.github.io/posts/how-i-revise-engineering-interviews-2026/</guid>
+      <description>Lessons from my experience as a hiring lead on interviewing engineers in the AI era and avoiding costly hiring mistakes</description>
+      <content:encoded><![CDATA[<h2 id="how-id-revise-engineering-interviews-for-2026">How I’d Revise Engineering Interviews for 2026</h2>
+<p>A bad hire is incredibly expensive: salary, recruiting fees, technical debt, and toll on team morale. Yet, interviewers still rely on the wrong signals. After running over a hundred interviews in the past couple of years, I want to share the common traits I&rsquo;ve been looking for as an interviewer to help de-risk the hiring decision.</p>
+<p>Software engineering was never about writing code; it&rsquo;s always been about solving business problems. Despite this, most companies I&rsquo;ve talked to in the past 12 months are still interviewing with LeetCode and Kubernetes trivia. If an AI agent can pass your technical test, not only is your process broken but you’re also sending a bad signal about your engineering culture.</p>
+<p>Instead of testing if a candidate can outperform an agent, we should be testing if they can direct one. The best hires are pragmatic owners who identify the right problems to solve and leverage every tool at their disposal to ship them.</p>
+<h3 id="2015-style-interviews-fail-in-the-ai-era">2015-style interviews fail in the AI era</h3>
+<p>During my career, I&rsquo;ve been grinding LeetCode, spending evenings on <em>Cracking the Coding Interview</em>. I got tested on so many different types of questions, from Fizz Buzz to LeetCode hard questions, rapid-fire trivia to open-ended organizational discussions. Finally, I&rsquo;ve seen how they rarely transpose to our day-to-day job.</p>
+<p>I&rsquo;ve also been on the other side of the table as I ran over a hundred interviews at Canva, and led final decision meetings. By 2025, I transitioned to AI-assisted interviews: very broad and deeply technical challenges to solve in just under an hour. This has completely changed my view on which signals to probe and look for.</p>
+<p>Now, the AI coding workflows are becoming more mature and well adopted. Shipping fast is the norm, and coding language fluency is harder to probe and no longer a key differentiator. We expect engineers to be broader across domains and exercise critical thinking.</p>
+<p>With this change of modus operandi, engineers spend more time reading code, whether that is text-completion or code reviews - than writing it. Being able to audit the code is a large part of the job now. One of my favorite types of interview is to ask the candidate to extend an existing system or do a code review exercise.</p>
+<p>Since craft is no longer a differentiator, value interviews are now immensely more important than before. They give extra time to probe on soft skills such as leadership, communication and strategy.</p>
+<div class="pro-tip-banner" role="note" aria-label="Pro tip">
+  <p><strong>💡 Pro-tip:</strong> use one of your company&rsquo;s open-source projects, and phrase a problem as seen by your users that relates to this project. Sharing a problem rather than asking for a specific solution is one of the best ways to probe for curiosity and adaptation to your business and to the existing code base. For some positions or if your process allows, you may even not ask for code, and keep the problem architectural only.</p>
+</div>
+
+<h2 id="de-scoping">De-scoping</h2>
+<p>The most expensive mistake is solving the wrong problem. At this stage, I am not looking for technical details, but for the ability to scope a problem to meet business needs. Can they find the right MVP to solve based on the known constraints?</p>
+<p>The more senior the engineer, the more I keep the problem vague and high-level. I expect the candidate to probe and ask clarifying questions. Great engineers make the problem smaller and less ambiguous before diving in. They clearly question and state their assumptions out loud so we can validate them collaboratively.</p>
+<p>I particularly appreciate candidates who explicitly call out &ldquo;out of scope&rdquo;, and overly expensive or complicated edge cases not worth optimising for.</p>
+<p>While tighter scopes are expected for junior roles, we must stay mindful of the new floor: anything already well-defined can now be largely delegated to an agent.</p>
+<h2 id="first-principles-design">First-Principles Design</h2>
+<p>Once the scope is clear, we move to high-level design. This isn’t about choosing a specific technology, but about articulating trade-offs and laying down the fundamentals.</p>
+<p>I do not care whether a candidate wants to introduce a new MySQL or Postgres database, as long as they can state why a relational database is required. I am looking for the ability to explicitly tie system properties - like consistency or durability - back to the business requirements we just defined.</p>
+<p>Many interviewers fall into the trap of asking technology-specific trivia, expecting candidates to recite framework features like magic incantations. For example, I was once asked how I would scale Kubernetes pods based on non-native metrics. A question like this tests my ability to do a Google search. It also sends a negative signal about the company: what kind of micro-management or &ldquo;check-box&rdquo; engineering culture is actually happening there?</p>
+<p>Frameworks and libraries are transient; architectural patterns and the trade-offs they imply are what stay constant.</p>
+<div class="pro-tip-banner" role="note" aria-label="Pro tip">
+  <p><strong>💡 Pro-tip:</strong> a quick diagram can go a long way here. I recommend the <a href="https://c4model.com/diagrams/container">Container view</a> from the C4 model. An LLM can easily generate mermaid diagrams for anything below this. If the candidate gets lost in details, this is your opportunity to elevate the discussion to an appropriate level of details.</p>
+</div>
+
+<h2 id="ai-leverage-with-ownership">AI leverage with ownership</h2>
+<p>It&rsquo;s now time to implement a working solution. It&rsquo;s also a test for pragmatism. In a 60-minute exercise, we want to see the deliverable: running code. We deal with all sorts of constraints in the real world, and time is a very clear one here.</p>
+<p>I like to spend a few minutes analyzing the candidate’s development environment itself. It’s a great learning piece: How tight is their feedback loop? Is their AI setup leveraging local tooling (MCP, Skills) to be more efficient? What is their reasoning for picking a specific model for this task?</p>
+<p>I value engineers who can leverage the best tools, but I am specifically looking for how they <em>direct</em> those tools. Anyone blindly accepting an AI’s suggestions immediately raises a red flag. If you aren’t deeply owning your code during an interview, you won&rsquo;t do it day-to-day. I expect candidates to refine the plan, apply critical thinking, and most importantly intervene when the tool drifts toward over-engineering.</p>
+<p>The best candidates I’ve seen apply Test-Driven Development (TDD) principles to the AI workflow. They focus on reviewing test cases before looking at implementation details. They care about how the interface is exposed and consumed first, ensuring the contract is right before fixing lower-level logic.</p>
+<p>Eventually, I start probing harder on the craft skills like attention to edge-cases and other domains such as concurrency, encoding, failure modes, space/time complexity, accessibility, security&hellip;</p>
+<div class="pro-tip-banner" role="note" aria-label="Pro tip">
+  <p><strong>💡 Pro-tip:</strong> if your interview process is asynchronous, ask for the candidate’s AI transcripts. It reveals how they iterate, the quality of the prompts they write, and the level of details they dive into. You can also ask for a Loom to see how comfortable they are walking through the code.</p>
+</div>
+
+<h2 id="final-take">Final take</h2>
+<p>This isn&rsquo;t 2015 anymore. Asking an experienced candidate to answer framework trivia questions or white-board a sorting algorithm is a complete disconnect from the real world.</p>
+<p>On the other hand, hiring someone who relies on AI without deep ownership or architectural understanding is shooting yourself in the foot in the long run as you&rsquo;re trading short-term speed for long-term debt such as bottlenecks in performance, reliability and maintainability issues.</p>
+<p>Tools and frameworks are changing faster than ever. Embrace AI, but make sure to probe for the ability to understand the business problem, articulate the trade-offs they are making, and ship fast with ownership.</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Stop Giving Me Solutions</title>
-      <link>http://localhost:1313/posts/stop-giving-me-solutions/</link>
+      <link>https://mmailhos.github.io/posts/stop-giving-me-solutions/</link>
       <pubDate>Mon, 02 Mar 2026 09:00:00 +0100</pubDate>
-      <guid>http://localhost:1313/posts/stop-giving-me-solutions/</guid>
+      <guid>https://mmailhos.github.io/posts/stop-giving-me-solutions/</guid>
       <description>How prescriptive leadership erodes engineering culture</description>
       <content:encoded><![CDATA[<h2 id="its-just-a-quick-fix">&ldquo;It’s just a quick fix.&rdquo;</h2>
 <p>A few years ago, shortly after joining a scale-up, I was handed a task as part of my onboarding: <em>&ldquo;Add an autoscaler to this ECS service to reduce the cost of unused compute. It shouldn’t take more than half a day.&rdquo;</em></p>

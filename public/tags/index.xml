@@ -2,31 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Mathieu Mailhos</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://mmailhos.github.io/tags/</link>
     <description>Recent content in Tags on Mathieu Mailhos</description>
     <generator>Hugo -- 0.156.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2026 09:00:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Apr 2026 09:00:00 +0200</lastBuildDate>
+    <atom:link href="https://mmailhos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ai</title>
+      <link>https://mmailhos.github.io/tags/ai/</link>
+      <pubDate>Mon, 06 Apr 2026 09:00:00 +0200</pubDate>
+      <guid>https://mmailhos.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Engineering Culture</title>
-      <link>http://localhost:1313/tags/engineering-culture/</link>
-      <pubDate>Mon, 02 Mar 2026 09:00:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/engineering-culture/</guid>
+      <link>https://mmailhos.github.io/tags/engineering-culture/</link>
+      <pubDate>Mon, 06 Apr 2026 09:00:00 +0200</pubDate>
+      <guid>https://mmailhos.github.io/tags/engineering-culture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hiring</title>
+      <link>https://mmailhos.github.io/tags/hiring/</link>
+      <pubDate>Mon, 06 Apr 2026 09:00:00 +0200</pubDate>
+      <guid>https://mmailhos.github.io/tags/hiring/</guid>
       <description></description>
     </item>
     <item>
       <title>Leadership</title>
-      <link>http://localhost:1313/tags/leadership/</link>
-      <pubDate>Mon, 02 Mar 2026 09:00:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/leadership/</guid>
+      <link>https://mmailhos.github.io/tags/leadership/</link>
+      <pubDate>Mon, 06 Apr 2026 09:00:00 +0200</pubDate>
+      <guid>https://mmailhos.github.io/tags/leadership/</guid>
       <description></description>
     </item>
     <item>
       <title>Ownership</title>
-      <link>http://localhost:1313/tags/ownership/</link>
+      <link>https://mmailhos.github.io/tags/ownership/</link>
       <pubDate>Mon, 02 Mar 2026 09:00:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/ownership/</guid>
+      <guid>https://mmailhos.github.io/tags/ownership/</guid>
       <description></description>
     </item>
   </channel>

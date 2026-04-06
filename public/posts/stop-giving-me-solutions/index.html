@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Stop Giving Me Solutions | Mathieu Mailhos</title>
 <meta name="keywords" content="leadership, ownership, engineering culture">
 <meta name="description" content="How prescriptive leadership erodes engineering culture">
 <meta name="author" content="Mathieu">
-<link rel="canonical" href="http://localhost:1313/posts/stop-giving-me-solutions/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://mmailhos.github.io/posts/stop-giving-me-solutions/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.20b4c06e5b0af0137db2b1b6a4a0baa0ef03c800e9832211d696079083b40309.css" integrity="sha256-ILTAblsK8BN9srG2pKC6oO8DyADpgyIR1pYHkIO0Awk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://mmailhos.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mmailhos.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mmailhos.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mmailhos.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mmailhos.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/stop-giving-me-solutions/">
+<link rel="alternate" hreflang="en" href="https://mmailhos.github.io/posts/stop-giving-me-solutions/">
 <noscript>
     <style>
         #theme-toggle,
@@ -70,13 +70,82 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
+</script><meta property="og:url" content="https://mmailhos.github.io/posts/stop-giving-me-solutions/">
+  <meta property="og:site_name" content="Mathieu Mailhos">
+  <meta property="og:title" content="Stop Giving Me Solutions">
+  <meta property="og:description" content="How prescriptive leadership erodes engineering culture">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-02T09:00:00+01:00">
+    <meta property="article:modified_time" content="2026-03-02T09:00:00+01:00">
+    <meta property="article:tag" content="Leadership">
+    <meta property="article:tag" content="Ownership">
+    <meta property="article:tag" content="Engineering Culture">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stop Giving Me Solutions">
+<meta name="twitter:description" content="How prescriptive leadership erodes engineering culture">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://mmailhos.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Stop Giving Me Solutions",
+      "item": "https://mmailhos.github.io/posts/stop-giving-me-solutions/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Stop Giving Me Solutions",
+  "name": "Stop Giving Me Solutions",
+  "description": "How prescriptive leadership erodes engineering culture",
+  "keywords": [
+    "leadership", "ownership", "engineering culture"
+  ],
+  "articleBody": "“It’s just a quick fix.” A few years ago, shortly after joining a scale-up, I was handed a task as part of my onboarding: “Add an autoscaler to this ECS service to reduce the cost of unused compute. It shouldn’t take more than half a day.”\nAt first, it sounded straightforward. The service was significantly overprovisioned with very little load. A rough estimate suggested we could reduce the fleet size by 80% and immediately cut costs. It looked like an easy win, so I implemented it.\nBefore calling the task complete, I ran a load test approximating production traffic. The autoscaling logic triggered correctly, and new tasks started launching. But then, requests started failing, and clients began seeing 502 and 504 errors.\nDigging deeper, I found a few issues:\nThe concurrency model (Gunicorn/gevent) lacked proper monkey patching. Neither the client nor the Traefik proxy layer implemented retries. New ECS tasks took up to 8 minutes to become ready to serve traffic. Health checks and timeout configurations were misaligned. After talking more with the core maintainer, latency wasn’t the primary constraint as this service handled long-running jobs, but availability was.\nIn short: the system was not designed to scale horizontally in a safe way.\nInstead of delivering immediate business value, I had to spend our limited time budget proving why the prescribed solution was insufficient, and investigating what actual architectural changes were needed. Ultimately, the cost of refactoring the service outweighed the immediate infrastructure savings, and we made the pragmatic business decision to move on to higher-priority initiatives. These machines are still burning money today.\nThe Anti-Pattern: Prescribing the “How” What went wrong here? I was handed a prescriptive solution that ignored the system’s historical context.\nWhen organizations prescribe exact solutions to their engineers, they unintentionally build a culture of dependency. We train teams to wait for instructions rather than think critically, shifting the engineer’s role from a problem-solver to a mere implementer.\nMore importantly, when an engineer just executes a predefined task, they don’t own the deliverable. If the solution fails, the accountability falls on whoever wrote the ticket. You cannot hold someone accountable for an outcome if they had no say in the methodology.\nThis is entirely incompatible with a culture of true engineering ownership, which a lot of companies claim to have.\nA Better Way: Framing the “Why” We could have achieved a much better outcome simply by phrasing the task differently:\n“In the Bar project, our image-processing machines are largely underutilized and costing us money. Could we aim to reduce this bill by 80%, or do the best we can within a 2-day timebox?”\nThis approach provides context, states the business goal, and sets a measurable constraint. Most importantly, it delegates the methodology to the engineer.\nIn this case, simply optimizing the client to handle failures gracefully and setting a fixed, smaller number of nodes would have met the goal.\nInfluencing Through Inquiry As a tech lead, it is tempting to push for the solution you see in your head. But the best way to ensure an implementation actually solves the root issue is to collaborate.\nInstead of dictating, ask:\nWhat approaches have you considered? How should we handle the edge case when X happens? What do you see as the biggest roadblock here? What is the engineering effort of solution Z compared to the business benefit? Beside, guiding an engineer to the solution themselves gives them a sense of achievement and total ownership.\nScaling Ownership: A Canva Success Story While working as a Staff SRE at Canva, I led a year-long initiative to discover and remediate systemic reliability risks across a platform serving 250 million MAUs.\nWe built an automated system that parsed incident postmortems, Slack context, and Service SLOs using data science and LLMs. This allowed us to build a comprehensive and continuous backlog of reliability risks.\nSREs translated these risks into well-framed problem statements for the owning teams. We ensured every ticket had:\nClear user impact, linked to previous incident metadata. Measurable outcomes, tied directly to observability metrics. A framing of business risk. By the time I left, we had accumulated a backlog of over 80 well-framed reliability risks, with half successfully adopted onto product team roadmaps. We rarely saw pushback because we weren’t telling them how to write their code; we were showing them a critical business problem and trusting them to solve it.\nEven better, the engineers who were able to solve this risks could measure their impact through real business metrics. How good!\nConclusion When people are trusted to design their own solutions, they become deeply invested in making them work. Solutions are often better and engineers grow in their craft and develop autonomy.\n",
+  "wordCount" : "783",
+  "inLanguage": "en",
+  "datePublished": "2026-03-02T09:00:00+01:00",
+  "dateModified": "2026-03-02T09:00:00+01:00",
+  "author":{
+    "@type": "Person",
+    "name": "Mathieu"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mmailhos.github.io/posts/stop-giving-me-solutions/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mathieu Mailhos",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mmailhos.github.io/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Mathieu Mailhos (Alt + H)">Mathieu Mailhos</a>
+            <a href="https://mmailhos.github.io/" accesskey="h" title="Mathieu Mailhos (Alt + H)">Mathieu Mailhos</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -172,16 +241,16 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/leadership/">Leadership</a></li>
-      <li><a href="http://localhost:1313/tags/ownership/">Ownership</a></li>
-      <li><a href="http://localhost:1313/tags/engineering-culture/">Engineering Culture</a></li>
+      <li><a href="https://mmailhos.github.io/tags/leadership/">Leadership</a></li>
+      <li><a href="https://mmailhos.github.io/tags/ownership/">Ownership</a></li>
+      <li><a href="https://mmailhos.github.io/tags/engineering-culture/">Engineering Culture</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">Mathieu Mailhos</a></span> · 
+        <span>&copy; 2026 <a href="https://mmailhos.github.io/">Mathieu Mailhos</a></span> · 
 
     <span>
         Powered by
