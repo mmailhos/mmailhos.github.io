@@ -1,0 +1,15 @@
+.pro-tip-banner {
+  margin: 1.1rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #f2c94c;
+  border-radius: 8px;
+  background: rgba(242, 201, 76, 0.12);
+}
+
+.pro-tip-banner p {
+  margin: 0;
+}
+
+.pro-tip-banner strong {
+  color: var(--primary);
+}
