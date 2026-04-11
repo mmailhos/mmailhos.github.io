@@ -1,4 +1,4 @@
-baseURL = "https://mmailhos.github.io/"
+baseURL = "https://mathieu.coffee/"
 languageCode = "en-us"
 title = "Mathieu Mailhos"
 theme = "PaperMod"
@@ -9,7 +9,7 @@ enableRSS = true
   ShowFullTextinRSS = true
   ShowReadingTime = true
   author = "Mathieu"
-  homepage = "https://example.com"
+  homepage = "https://mathieu.coffee"
  
 
   [params.homeInfoParams]
