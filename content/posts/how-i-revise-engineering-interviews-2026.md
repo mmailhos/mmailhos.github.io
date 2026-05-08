@@ -9,25 +9,30 @@ description = "The signals have changed: how to interview software engineers wit
 
 A bad hire is incredibly expensive: salary, recruiting fees, technical debt, and toll on team morale. Yet, interviewers still rely on the wrong signals. After running over a hundred interviews in the past couple of years, I want to share the common traits I've been looking for as an interviewer to help de-risk the hiring decision.
 
-Software engineering was never about writing code; it's always been about solving business problems. Despite this, most companies I've talked to in the past 12 months are still interviewing with LeetCode and Kubernetes trivia. If an AI agent can pass your technical test, not only is your process broken but you’re also sending a bad signal about your engineering culture.
+Software engineering was never about writing code; it's always been about solving business problems. Despite this, most companies I've talked to in the past 12 months are still interviewing with LeetCode and Kubernetes trivia. If an agent can pass your technical test, not only is your process broken but you’re also sending a bad signal about your engineering culture.
 
 Instead of testing if a candidate can outperform an agent, we should be testing if they can direct one. The best hires are pragmatic owners who identify the right problems to solve and leverage every tool at their disposal to ship them.
 
-### 2015-style interviews fail in the AI era
+## 2015-style interviews fail in the AI era
 
 During my career, I've been grinding LeetCode challenges, and spending evenings on _Cracking the Coding Interview_. I got tested on so many different types of questions, from Fizz Buzz to LeetCode hard questions, rapid-fire trivia to open-ended organizational discussions. Finally, I've seen how they rarely transpose to our day-to-day job.
 
 I've also been on the other side of the table as I ran over a hundred interviews at Canva, and led final decision meetings. By 2025, I transitioned to AI-assisted interviews: very broad and deeply technical challenges to solve in just under an hour. This has completely changed my view on which signals to probe and look for.
 
-Now, the AI coding workflows are becoming more mature and well adopted (more than [36% of Stack Overflow 2025](https://survey.stackoverflow.co/2025) survey respondents use AI-enabled tools). Shipping fast is the norm, and coding language fluency is harder to probe and no longer a key differentiator. We expect engineers to be broader across domains and exercise critical thinking. 
+Now, the AI coding workflows are becoming more mature and well adopted (more than [36% of Stack Overflow 2025](https://survey.stackoverflow.co/2025) survey respondents use AI-enabled tools). Shipping fast is the norm, and coding language fluency is harder to probe and no longer a key differentiator. We expect engineers to be broader across domains and exercise critical thinking. We must adapt the format.
 
-With this change of modus operandi, engineers spend more time reading code, whether that is text-completion or code reviews - than writing it. Being able to audit the code is a large part of the job now. One of my favorite types of interview is to ask the candidate to extend an existing system or do a code review exercise.
+
+## Interview format
+
+I've seen four interview formats that can capture different signals:
+1. Feature implementation: task the candidate with a substantial feature and observe their intent through their prompts. Can they work with high-level constraints and edge cases?
+2. Code Review: since engineers now spend more time auditing than writing, this is key and my new favorite format. Ask them to perform a deep-dive review from a prepared pull-request raised by a more junior engineer. Look for their ability to spot non-obvious failure modes like race conditions or inefficient business logic.
+3. Architecture: high-level session where code is secondary to system design. Focus on _why_ over _what_. Look for deep understanding of technologies from first-principles.
+4. Values interviews. Slightly out of scope for this article but worth mentioning as they are now immensely more important than before. They probe on soft skills such as leadership, communication and strategy and are absolutely worth extra investment. Try to go deep into past experiences and key decisions, as they are hard to "fake".
 
 {{< protip >}}
-use one of your company's open-source projects, and phrase a problem as seen by your users that relates to this project. Sharing a problem rather than asking for a specific solution is one of the best ways to probe for curiosity and adaptation to your business and to the existing code base. For some positions or if your process allows, you may even not ask for code, and keep the problem architectural only.
+A great "real-world" task is to use one of your company's open-source projects, and phrase a problem as seen by your users that relates to this project. Sharing a problem rather than asking for a specific solution is one of the best ways to probe for curiosity and adaptation to your business. This also lets you test building a new feature while also see the adaptation to an existing code base.
 {{< /protip >}}
-
-Value interviews are now immensely more important than before. They give extra time to probe on soft skills such as leadership, communication and strategy and are absolutely worth extra investment. Try to go deep into past experiences and key decisions, as any discussion too shallow is easily "fakable".
 
 ## De-scoping
 

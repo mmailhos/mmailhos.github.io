@@ -42,7 +42,7 @@ This is entirely incompatible with a culture of true engineering ownership, whic
 
 We could have achieved a much better outcome simply by phrasing the task differently:
 
-_"In the Bar project, our image-processing machines are largely underutilized and costing us money. Could we aim to reduce this bill by 80%, or do the best we can within a 2-day timebox?"_
+_"In the foo project, it appears our image-processing machines are largely underutilized and costing us money. Could we aim to reduce this bill by ~80%, or do the best we can within a 2-day timebox?"_
 
 This approach provides context, states the business goal, and sets a measurable constraint. Most importantly, it delegates the _methodology_ to the engineer.
 
@@ -65,7 +65,7 @@ Beside, guiding an engineer to the solution themselves gives them a sense of ach
 
 While working as a Staff SRE at Canva, I led a year-long initiative to discover and remediate systemic reliability risks across a platform serving 250 million MAUs.
 
-We built an automated system that parsed incident postmortems, Slack context, and Service SLOs using data science and LLMs. This allowed us to build a comprehensive and continuous backlog of reliability risks.
+We built an automated system that parsed incident postmortems, Slack context, and Service SLOs using data science and LLMs. This allowed us to build a comprehensive and continuous backlog of reliability risks backed with evidence of business impact.
 
 SREs translated these risks into well-framed problem statements for the owning teams. We ensured every ticket had:
 
